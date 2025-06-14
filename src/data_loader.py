@@ -11,11 +11,12 @@ class DataLoader:
         self.source = source
 
     def load_from_csv(self, path: str) -> pd.DataFrame:
-        
-    def load_from_api(self, url: str) -> pd.DataFrame:
         # xử lý trả về dạng DataFrame
-        pass
-
-    def crawl_from_web(self, url: str) -> pd.DataFrame:
-        # xử lý trả về dạng DataFrame
-        pass
+        # ví dụ
+        try:
+            df = pd.read_csv(path)
+            print(f"Đã tải thành công dữ liệu từ: {path}")
+            return df
+        except FileNotFoundError:
+            print(f"Lỗi: Không tìm thấy file tại đường dẫn '{path}'")
+            return pd.DataFrame() # df rỗng
