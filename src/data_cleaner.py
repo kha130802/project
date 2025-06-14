@@ -27,3 +27,8 @@ class DataCleaner:
                 self.df[column] = self.df[column].astype(dtype)
             else:
                 print(f"Cột {column} không tồn tại trong DataFrame.")
+    def normalize_column_names(self):
+        """
+        Chuyển đổi tên cột trong DataFrame thành dạng chữ thường và loại bỏ khoảng trắng.
+        """
+        self.df.columns = self.df.columns.str.lower().str.strip()
