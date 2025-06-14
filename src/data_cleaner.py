@@ -32,3 +32,5 @@ class DataCleaner:
         Chuyển đổi tên cột trong DataFrame thành dạng chữ thường và loại bỏ khoảng trắng.
         """
         self.df.columns = self.df.columns.str.lower().str.strip()
+    def get_clean_data(self) -> pd.DataFrame:
+        return self.df
